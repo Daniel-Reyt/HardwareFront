@@ -1,0 +1,18 @@
+<div class="col-lg-12">
+  <app-navbar></app-navbar>
+</div>
+<div class="container" style="color: white; text-align: center">
+  <h1>Update username</h1>
+  <form class="form-group" [formGroup]="modifyUsername">
+    <h3>votre username : {{username}}</h3>
+    <br>
+    <br>
+    <input type="text" formControlName="usernameEdit" class="form-control" [minLength]="8" [maxLength]="15" required="">
+    <br>
+    <div class="bg-info">
+      <p>merci de vous re connecter afin que les changements soient pris en compte</p>
+    </div>
+    <br>
+    <button class="col-lg-12 btn btn-green" (click)="updateUsername()">Modifier</button>
+  </form>
+</div>

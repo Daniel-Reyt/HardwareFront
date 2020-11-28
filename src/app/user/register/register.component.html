@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="col-lg-12" style="text-align: center; color: white">
+    <h1>Créer un compte</h1>
+    <h3>ou</h3>
+    <h4>Cliquer <a routerLink="/">ici</a> pour vous connectez si vous en avez un</h4>
+  </div>
+  <div class="row">
+    <form [formGroup]="addUserForm" class="col-lg-12">
+      <div class="row">
+        <input class="form-control" type="text" id="username"  formControlName="username" placeholder="enter username...">
+      </div>
+      <br>
+      <div class="row">
+        <input class="form-control" type="password" id="password"  formControlName="password" placeholder="enter password...">
+      </div>
+      <br>
+      <button class="btn col-lg-12" style="border-width: 3px; border-style: dashed ;border-color: white; color: white; box-shadow: 0 0 10px #000" (click)="addUser()"><h4>Register</h4></button>
+    </form>
+  </div>
+</div>

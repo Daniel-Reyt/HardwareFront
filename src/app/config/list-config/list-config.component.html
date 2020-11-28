@@ -1,0 +1,30 @@
+<div class="col-lg-12">
+  <app-navbar></app-navbar>
+</div>
+<br>
+<br>
+<div class="col-lg-12" style="text-align: center; color: white">
+  <h1>List Of All Config</h1>
+</div>
+  <div class="row">
+    <div class="card col-lg-12" *ngFor="let config of configList | paginate: {itemsPerPage: itemPerPage, currentPage: p}, let i = index" style="margin-bottom: 15px">
+      <p>prix de la config : {{config.price}} €</p>
+      <p>liste des composant de la config : {{config.componentList}}</p>
+      <button class="col-lg-2 btn btn-primary" id="detail" (click)="getConfigDetail(configList[i])">detail</button>
+    </div>
+  </div>
+<br>
+<div class="row">
+  <select [(ngModel)]="itemPerPage" class="form-control col-lg-2">
+    <option value="10">10</option>
+    <option value="20">20</option>
+    <option value="50">50</option>
+  </select>
+
+  <pagination-controls (pageChange)="p = $event"
+                       previousLabel="Précédent"
+                       nextLabel="Suivant"
+  ></pagination-controls>
+</div>
+<button class="btn btn-primary col-lg-12" routerLink="/home">Back to home</button>
+

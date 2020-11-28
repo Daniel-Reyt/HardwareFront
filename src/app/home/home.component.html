@@ -1,0 +1,21 @@
+<div class="col-lg-12">
+  <app-navbar></app-navbar>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6 text-center">
+    <div class="card bg-lgrey card-size" id="card-user">
+      <div class="card-header">
+        <img src="../../assets/user-card-img.png" alt="user-image" length="150" width="150" style="position: center">
+      </div>
+      <div class="card-body">
+        <p>username : {{username}}</p>
+        <p>role : {{roleUser}}</p>
+        <button (click)="setPassword()">Update Password</button>
+        <button (click)="setUsername()">Update Username</button>
+      </div>
+    </div>
+  </div>
+</div>

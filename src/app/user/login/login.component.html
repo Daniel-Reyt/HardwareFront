@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="col-lg-12" style="text-align: center; color: white">
+    <h1>Merci de vous connecter</h1>
+    <h3>ou</h3>
+    <h4>Cliquer <a routerLink="/register">ici</a> pour créer un compte</h4>
+  </div>
+  <form [formGroup]="formLogin" class="form-group">
+    <div class="row">
+      <input class="form-control" type="text" id="username" formControlName="username" placeholder="Merci de renseigner votre nom d'utilisateur">
+    </div>
+    <br>
+    <div class="row">
+      <input class="form-control" type="password" id="password" formControlName="password" placeholder="Merci de renseigner votre mot de passe">
+    </div>
+    <br>
+    <div class="row">
+      <button class="btn col-lg-12" style="border-width: 3px; border-style: dashed ;border-color: white; color: white; box-shadow: 0 0 10px #000" (click)="login()"><h4>Log In</h4></button>
+    </div>
+  </form>
+</div>

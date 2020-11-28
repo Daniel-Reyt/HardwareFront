@@ -1,0 +1,31 @@
+<div class="col-lg-12">
+  <app-navbar></app-navbar>
+</div>
+<br>
+<br>
+<div class="col-lg-12" style="text-align: center; color: white">
+  <h1>List Of All Composants</h1>
+</div>
+<div class="row">
+  <div class="card col-lg-12" *ngFor="let composant of composantList | paginate: {itemsPerPage: itemPerPage, currentPage: p}, let i = index" style="margin-bottom: 15px; overflow: auto; max-height: 400px">
+    <p>marque : {{composant.marque}}</p>
+    <p>référence : {{composant.reference}}</p>
+    <p>description : {{composant.description}}</p>
+    <p>prix du composant : {{composant.price}} €</p>
+    <button class="btn btn-primary" id="detail" (click)="getComposantDetail(composantList[i])">detail</button>
+  </div>
+</div>
+<br>
+<div class="row">
+  <select [(ngModel)]="itemPerPage" class="form-control col-lg-2">
+    <option value="10">10</option>
+    <option value="20">20</option>
+    <option value="50">50</option>
+  </select>
+
+  <pagination-controls (pageChange)="p = $event"
+                       previousLabel="Précédent"
+                       nextLabel="Suivant"
+  ></pagination-controls>
+</div>
+<button class="btn btn-primary col-lg-12" routerLink="/home">Back to home</button>
